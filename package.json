@@ -1,0 +1,32 @@
+{
+  "name": "project2_data",
+  "version": "1.0.0",
+  "description": "Full Stack Web App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcohen113/Project2.git"
+  },
+  "author": "mike cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcohen113/Project2/issues"
+  },
+  "homepage": "https://github.com/mcohen113/Project2#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}
