@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 
 const app = express();
-const searchHolidays = require('./temp/holidays');
+const searchHolidays = require('./model/holiday');
 const holidayFunction = searchHolidays();
 const port = process.argv[2] || process.env.PORT || 3000;
 // const homeRoute = require('./router/path');
@@ -23,10 +23,11 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('/holidays', holidayFunction.getSearchTerms, (req, res) => {
-  res.render('holidays', {
-    test: res.searchedHoliday
-  });
+app.get('/holiday', holidayFunction.getSearchTerms, holidayFunction.searchHolidays, (req, res) => {
+  // res.render('holidays', {
+  //   test: res.searchedHoliday
+  // });
+  res.json(res.data)
 
 });
 

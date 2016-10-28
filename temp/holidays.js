@@ -1,20 +1,25 @@
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 
-module.exports = function holidayFunction() {
+// module.exports = function holidayFunction() {
 
-  const getSearchTerms = ( (req, res, next) => {
-    res.searchedHoliday = "PURIM"//req.query.title;
-    return next();
-  });//end getSearchedTerms
+//   const getSearchTerms = ( (req, res, next) => {
+//     res.searchedHoliday = "PURIM"//req.query.title;
+//     return next();
+//   });//end getSearchedTerms
 
-  // const searchAlbums = ( (req, res, next) => {
-  //   const API_URL = `https://itunes.apple.com/search?term=${res.searchedArtist}&entity=album&medium=music`;
-  //   fetch(API_URL).then((r)=> r.json()).then((result)=>{
-  //     res.data=result;
-  //     next();
-  //   })
-  // })//searchAlbums
+//   const searchHolidays = ( (req, res, next) => {
+//     // const API_URL = `http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=off&mod=off&nx=off&year=now&month=x&ss=off&mf=off&c=off&geo=geoname&geonameid=3448439&m=50&s=off${res.searchedHoliday}`;
+//     const API_URL = 'http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=off&mod=on&nx=on&year=1999&month=x'
+//     fetch(API_URL)
+//     .then((r)=> r.json())
+//     .then((result)=>{
+//       res.data=result;
+//       next();
+//     })
+//   })//searchAlbums
 
-  return {getSearchTerms};
-};//end iTunesService
+//   //http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=off&mod=on&nx=on&year=1999&month=x
+
+//   return { getSearchTerms, searchHolidays };
+// };//end iTunesService
