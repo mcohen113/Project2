@@ -2,8 +2,10 @@ const express = require('express');
 const logger = require('morgan');
 
 const app = express();
+const searchHolidays = require('./temp/holidays');
+const holidayFunction = searchHolidays();
 const port = process.argv[2] || process.env.PORT || 3000;
-const homeRoute = require('./router/path');
+// const homeRoute = require('./router/path');
 // const theHolidays = require('./model/search');
 
 app.use(logger('dev'));
@@ -16,8 +18,30 @@ app.set('views', './views');
 //   res.render("index");
 // })
 
+app.get('/', (req, res) => {
+  res.render('index');
 
-app.use('/', homeRoute);
+});
+
+app.get('/holidays', holidayFunction.getSearchTerms, (req, res) => {
+  res.render('holidays', {
+    test: res.searchedHoliday
+  });
+
+});
+
+
+
+// app.get('/search', iTunesService.getSearchTerms, iTunesService.searchAlbums, dbService.getFavorites, (req, res)=> {
+//   res.render('albums', {
+//     searchedAlbums: res.data,
+//     searchParams: res.searchedArtist,
+//     favData: res.favData,
+//   })
+// })
+
+
+// app.use('/', homeRoute);
 // app.use('/', theHolidays);
 
 
