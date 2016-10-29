@@ -6,19 +6,35 @@
   <title>Home</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-  <div>
-    <h1>The Year 4000</h1>
-      <p>Enter a year</p>
+    <body>
+      <div>
+        <h1>The Year 4000</h1>
+          <p>Enter a year</p>
+            <form action="/holidays/both" method="post">
+              <input type="text" name="year">
+              <!-- <button type="submit">submit</button> -->
+            <!-- </form> -->
+              <p>Enter a holiday</p>
+            <!-- <form action="/holidays" method="post"> -->
+              <input type="text" name="maj"><br>
+              <button type="submit">submit</button>
+            </form>
 
-    <form action="/holidays" method="post">
-      <input type="text" name="year">
-        <button type="submit">submit</button>
-    </form>
-        <ul>
+            <p>Search by Major Holidays</p>
+            <form action="/holidays/year" method="post">
+              <input type="text" name="maj">
+              <button type="submit">submit</button>
+            </form>
+
+            <p>Search by Years</p>
+            <form action="/holidays/maj" method="post">
+              <input type="text" name="year">
+              <button type="submit">submit</button>
+            </form>
+      </div>
+    </body>
+        <!-- <ul>
          <li> <a title="Holiday" href="/holidays" name="holidays">Holidays</a></li>
           <button type="submit">submit</button>
-        </ul>
-  </div>
-</body>
+        </ul> -->
 </html>
