@@ -1,5 +1,8 @@
 {
   "name": "project2_data",
+  "engines": {
+    "node": "6.6.0"
+  },
   "version": "1.0.0",
   "description": "Full Stack Web App",
   "main": "server.js",
