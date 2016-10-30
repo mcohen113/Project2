@@ -3,17 +3,19 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
-const { searchYears } = require('./model/holidays')();
-// const holidayFunction = searchHolidays();
-
+const searchYears = require('./models/holidays');
+// const { searchHolidays } = require('./model/search')();
 const port = process.argv[2] || process.env.PORT || 3000;
-// const homeRoute = require('./router/path');
-// const theHolidays = require('./model/search');
+const indexRouter     = require('./routes/index.js');
+const authRouter    = require('./routes/auth');
+const usersRouter     = require('./routes/users');
+const holidaysRouter     = require('./routes/holidays');
 
 app.use(logger('dev'));
 
 app.set('view engine', 'ejs');
-app.set('views', './views');
+// app.set('views', './views');
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,16 +25,13 @@ app.get('/', (req, res) => {
 });
 // app.use(express.static(path.join(__dirname +, 'public')));
 
-app.get('/holidays', searchYears, (req, res) => {
-  console.log('this is res data : ' + res.data);
-  res.json(res.data);
-});
+app.use('/', indexRouter);
+app.use('/auth', authRouter);
+app.use('/users', usersRouter);
+app.use('/holidays', holidaysRouter);
 
-app.post('/holidays/both', searchYears, (req, res) => {
-  res.json({
-    holiday: res.holidays,
-  });
-});
 
-app.listen(port, () => console.log('great job dude on PORT', port));
+
+
+app.listen(port, () => console.log((app._router.stack), 'great job dude on PORT', port));
 
