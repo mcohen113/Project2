@@ -7,7 +7,7 @@ The Jewish holidays have long been known to cause joy and confusion for many peo
 
 So confusing. But The Year 4000 puts all that to an end!!!
 
-The Year 4000 is an app that allows the user to search the hebcal API for the Gregorian date of any Jewish holiday..  Users can create a profile and log in, after which they are brought to a search page where they:
+The Year 4000 is an app that allows the user to search the hebcal API for the Gregorian date of any Jewish holiday.  Users can create a profile and log in, after which they are brought to a search page where they:
 
 -Enter a year
 
