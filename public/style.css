@@ -27,13 +27,6 @@
     margin-right: 51.5%;
     border-radius: 16px 8px;
 }
-.search-results {
-    /*border-spacing: 10px;*/
-    /*border-color: black;*/
-    /*height: 30vh;
-    width: 50vw:;
-    overflow: scroll;*/
-}
 
 .container {
  /* padding: 10px;*/
@@ -73,7 +66,6 @@ text-align: center;
 .signin {
 
 font-size: 120%;
-
 
 }
 

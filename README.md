@@ -19,7 +19,7 @@ The Year 4000 is an app that allows the user to search the hebcal API for the Gr
 
 Searches return all the days of a particular holiday, and can be saved and deleted as favorites in a separate column. Then they can click on the links of their favorites and learn more about the history and traditions behind these holy days.
 
-![alt tag](./public/images/PJ2Wirefrm.png)
+![alt tag](./images/PJ2Wirefrm.png)
 ------
 
 Functionality
