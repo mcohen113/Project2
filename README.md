@@ -1,5 +1,7 @@
-# Project2--Full Stack Web App
-THE YEAR 4000
+# Project2-- THE YEAR 4000
+
+A Full Stack Web App
+
 
 Introduction
 
@@ -17,8 +19,7 @@ The Year 4000 is an app that allows the user to search the hebcal API for the Gr
 
 Searches return all the days of a particular holiday, and can be saved and deleted as favorites in a separate column. Then they can click on the links of their favorites and learn more about the history and traditions behind these holy days.
 
-<img src="/public/images/PJ2Wirefrm" width="350"/>
-
+![alt tag](./public/images/PJ2Wirefrm.png)
 ------
 
 Functionality
@@ -26,13 +27,16 @@ Functionality
 The application was built using node, express, mongo, javascript, css, and html.
 The search feature involves some intricacies as the hebcal api database lists holidays with a problematic naming convention wherein holidays with multiple days (some as many as eight) have a different name.  
 
-<img src="/public/images/hebcal1" width="350"/><
-<img src="/public/images/hebcal2" width="350"/>
+![alt tag](./images/hebcal1.png)
+
+![alt tag](./images/hebcal2.png)
+
 
 To account for this, as well the various different accepted spellings of many of the name of the holidays, several methods were employed in order to make the search more fuzzy and kid friendly.
-As opposed to the title field, the link was parsed as key for the search, read using the lastIndexOf and substring methods, after which the strings were compared using a Levenshtein distance algorithm.
+As opposed to the title field, the link was parsed as key for the search, read using the lastIndexOf and substring methods, after which the strings were compared using a Levenshtein edit distance algorithm to match up different interpretations of spellings of the holidays.
 
-<img src="/public/images/levenshtein" width="350"/>
+![alt tag](./images/levenshtein.png)
+
 
 
 References
