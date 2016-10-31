@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <!-- Example -->
     <h1>Welcome! <%= user.username %></h1>
-    <a href="/music">Holiday Search</a>
+    <a href="/holidays">Holiday Search</a>
     <form action="/auth?_method=DELETE" method="post">
       <input type="submit" value="Logout">
     </form>

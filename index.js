@@ -1,33 +1,31 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const morgan = require('morgan')
-const session         = require('express-session');
+
+/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+const dotEnv          = require('dotenv').config({silent: true});
+const express         = require('express');
+const morgan          = require('morgan');
 const path            = require('path');
+const bodyParser      = require('body-parser');
+const session         = require('express-session');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
-const app = express();
-const searchYears = require('./models/holidays');
-// const { searchHolidays } = require('./model/search')();
-const port = process.argv[2] || process.env.PORT || 3000;
 const indexRouter     = require('./routes/index.js');
-const authRouter    = require('./routes/auth');
+const authRouter      = require('./routes/auth');
 const usersRouter     = require('./routes/users');
 const holidaysRouter     = require('./routes/holidays');
-// const musicRouter     = require('./routes/music');
 
+const app             = express();
 const SECRET          = 'tacos3000';
 
-app.use(logger('dev'));
-
 app.set('view engine', 'ejs');
-// app.set('views', './views');
+
 // log requests to STDOUT
 app.use(morgan('dev'));
 
 // parse application/x-www-form-urlencoded
-
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 // middleware for method override
 app.use(methodOverride('_method'));
@@ -41,16 +39,17 @@ app.use(session({
   secret: SECRET
 }));
 
+// Set static file root folder
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/holidays', holidaysRouter);
 
-
-app.listen(port, () => console.log((app._router.stack), 'great job dude on PORT', port));
+// Listen on port for connections
+// process.env.PORT is needed for when we deploy to Heroku
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`he fixed the fern back at ${port}`);
+});

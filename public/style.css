@@ -1,0 +1,20 @@
+ html * {
+   font-family: 'Orbitron', sans-serif;
+ }
+
+ body {
+    background-color: #004600;
+
+
+  }
+  footer {
+    position: absolute;
+    font-size: 160%;
+    margin-top: 5%;
+    margin-left: 40%;
+  }
+
+
+  .text, input  {
+    font-size: 200%;
+  }
