@@ -3,9 +3,7 @@
  }
 
  body {
-    background-color: #004600;
-
-
+    background-color:  rgb(66, 110, 244);
   }
   footer {
     position: absolute;
@@ -18,3 +16,29 @@
   .text, input  {
     font-size: 200%;
   }
+
+#search-results-container {
+    height: 60vh;
+    width: 50vw:;
+    overflow: scroll;
+    background-color: rgba(50, 50, 0, .3);
+    margin-right: 50%;
+}
+.search-results {
+    /*border-spacing: 10px;*/
+    /*border-color: black;*/
+    /*height: 30vh;
+    width: 50vw:;
+    overflow: scroll;*/
+}
+
+#favorites-container {
+  background-color: rgba(50, 50, 0, .3);
+  margin-right: 50%;
+  margin-color: black 2%;
+}
+/*#submit {
+  height: 5%;
+  width: 10%;
+  text-transform: all;
+}*/

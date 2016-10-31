@@ -11,32 +11,34 @@
   <h1><%= user.username %>, search for your favorite holidays!</h1>
 
   <form action="/holidays/search" method="post">
-    <p>Enter a year</p>
-    <input type="text" name="year">
-    <p>Enter a holiday</p>
-    <input type="text" name="holiday" placeholder="search">
-    <button type="submit">search</button>
+      <p>Enter a year</p>
+      <input type="text" name="year">
+      <p>Enter a holiday</p>
+      <input type="text" name="holiday" placeholder="search">
+      <button type="submit" >search</button>
   </form>
-  <div id="favorites-container">
-    <h2><%= user.username %>'s Favorites:</h2>
-    <% favorites.forEach((fave) => { %>
-      <div class="fave">
-        <p><%= fave.date %></p>
-        <p><%= fave.title %></p>
-        <p><%= fave.hebrew %></p>
-        <p><%= fave.link %></p>
-        <form action="/holidays/favorites/<%= fave._id %>?_method=DELETE" method="post">
-          <input type="submit" value="Delete">
-        </form>
+  <div class="container">
+      <h2><%= user.username %>'s Favorites:</h2>
+    <div id="favorites-container">
+      <% favorites.forEach((fave) => { %>
+        <div class="fave">
+          <p><%= fave.title %></p>
+          <p><%= fave.date %></p>
+          <p><%= fave.hebrew %></p>
+          <p><%= fave.link %></p>
+          <form action="/holidays/favorites/<%= fave._id %>?_method=DELETE" method="post">
+            <input type="submit" id="submit" value="Delete">
+    </form>
       </div>
     <% }) %>
+    </div>
   </div>
   <div id="search-results-container">
-    <h2>Search Results:</h2>
+    <h2>Search Results</h2>
     <% holidays.forEach((holiday) => { %>
       <div class="search-results">
-       <p><%= holiday.date %></p>
         <p><%= holiday.title %></p>
+        <p><%= holiday.date %></p>
         <p><%= holiday.hebrew %></p>
         <p><%= holiday.memo %></p>
         <p><%= holiday.link %></p>
@@ -45,11 +47,11 @@
           <input type="hidden" name="favorite[title]" value="<%= holiday.title%>">
           <input type="hidden" name="favorite[hebrew]" value="<%= holiday.hebrew%>">
           <input type="hidden" name="favorite[link]" value="<%= holiday.link%>">
-          <input type="submit" value="SAVE">
+          <input type="submit" id="submit" value="SAVE">
         </form>
       </div>
     <% }) %>
   </div>
-  <a href="/users/profile">Home</a>
+  <a href="/users/profile">Back to Profile</a>
 </body>
 </html>

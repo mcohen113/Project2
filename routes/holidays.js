@@ -26,3 +26,4 @@ router.post('/favorites', saveFavorite, (req, res) => {
 });
 
 module.exports = router;
+
