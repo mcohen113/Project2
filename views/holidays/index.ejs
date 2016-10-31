@@ -18,14 +18,14 @@
       <button type="submit" >search</button>
   </form>
   <div class="container">
-      <h2><%= user.username %>'s Favorites:</h2>
     <div id="favorites-container">
+      <h2><%= user.username %>'s Favorite Holiday</h2>
       <% favorites.forEach((fave) => { %>
         <div class="fave">
           <p><%= fave.title %></p>
           <p><%= fave.date %></p>
           <p><%= fave.hebrew %></p>
-          <p><%= fave.link %></p>
+        <a href="<%= fave.link %>" title="">Learn more!!!</a>
           <form action="/holidays/favorites/<%= fave._id %>?_method=DELETE" method="post">
             <input type="submit" id="submit" value="Delete">
     </form>
@@ -41,8 +41,8 @@
         <p><%= holiday.date %></p>
         <p><%= holiday.hebrew %></p>
         <p><%= holiday.memo %></p>
-        <p><%= holiday.link %></p>
-        <form action="/holidays/favorites" method="POST">
+        <a href="<%= holiday.link %>" title="">Learn more!!!</a>
+                <form action="/holidays/favorites" method="POST">
           <input type="hidden" name="favorite[date]" value="<%= holiday.date %>">
           <input type="hidden" name="favorite[title]" value="<%= holiday.title%>">
           <input type="hidden" name="favorite[hebrew]" value="<%= holiday.hebrew%>">

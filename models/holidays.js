@@ -13,6 +13,7 @@ const searchYears = (req, res, next) => {
       res.holidays = holidaysObject.items.filter(item => {
 
 //grabbing last word in link for holiday
+//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
         var itemName = item.link.substring(item.link.lastIndexOf('/') + 1);
         itemName = itemName.replace('-', ' ');
         itemName = itemName.toUpperCase();
