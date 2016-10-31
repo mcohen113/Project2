@@ -9,12 +9,15 @@ const { authenticate }    = require('../lib/auth');
 // });
 
 const { searchYears,
+        getFavorites,
         saveHoliday,
         deleteHolidays } = require('../models/holidays');
 
-router.post('/both', searchYears, (req, res) => {
-  res.json({
-    holiday: res.holidays,
+router.post('/search', searchYears, (req, res) => {
+  res.render('holidays/search', {
+    holidays: res.holidays,
+    user: { username: 'chaim' },
+    favorites: [],
   });
 });
 
@@ -22,7 +25,7 @@ router.post('/both', searchYears, (req, res) => {
 
 
 
-router.get('/', authenticate, searchYears, (req, res) => {
+router.get('/', authenticate, getFavorites, (req, res) => {
   res.render('holidays/index', {
     user: res.user,
     results: res.results || [],
@@ -30,7 +33,7 @@ router.get('/', authenticate, searchYears, (req, res) => {
   });
 });
 
-router.post('/search', authenticate, searchYears, (req,res) => {
+router.post('/search', authenticate, searchYears, getFavorites, (req,res) => {
   res.render('holidays/index', {
     user: res.user,
     results: res.results || [],

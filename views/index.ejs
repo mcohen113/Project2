@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Home</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 </head>
     <body>
@@ -14,18 +14,23 @@
     font-family: 'Orbitron', sans-serif;
 
   }
+  footer {
+    position: absolute;
+    font-size: 160%;
+    margin-top: 5%;
+    margin-left: 40%;
+  }
 
 
   .text, input  {
     font-size: 200%;
   }
-
-
 </style>
       <div class = "text">
         <h1>The Year 4000</h1>
+         <h2><!-- <%= /*user.username*/ %>, --> search for your favorite Jewish Holiday in any year across all time!!!!</h2>
           <p>Enter a year</p>
-            <form action="/holidays/both" method="post">
+            <form action="/holidays/search" method="post">
               <input type="text" name="year">
           <p>Enter a holiday</p>
               <input type="text" name="maj"><br>
@@ -34,4 +39,10 @@
       </div>
     </body>
 
+<footer>
+      <nav>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+      </nav>
+    </footer>
 </html>
