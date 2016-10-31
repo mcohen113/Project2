@@ -50,6 +50,33 @@
 
 }
 
+.signup {
+
+font-size: 200%;
+text-align: center;
+
+}
+
+.sign {
+  position: relative;
+  margin-top: 10%;
+
+}
+
+
+.log {
+  position: relative;
+  margin-top: 15%;
+
+}
+
+.signin {
+
+font-size: 120%;
+
+
+}
+
 
 /*#submit {
   height: 5%;
