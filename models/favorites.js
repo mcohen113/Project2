@@ -1,6 +1,6 @@
 const { MongoClient, ObjectID } = require('mongodb');
 
-const DB_CONNECTION = 'mongodb://localhost:27017/year4000';
+const DB_CONNECTION = process.env.MONGODB_URI || 'mongodb://localhost/year4000';
 
 function getFavorites(req, res, next) {
   // find all favorites for your userId
