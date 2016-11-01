@@ -41,4 +41,6 @@ As opposed to the title field, the link was parsed as key for the search, read u
 
 References
 
-www.hebcal.com
+www.hebcal.com API
+General Assembly instructors itunes CRUD lab
+Allon Hadaya
