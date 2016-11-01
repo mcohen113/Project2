@@ -20,6 +20,11 @@ The Year 4000 is an app that allows the user to search the hebcal API for the Gr
 Searches return all the days of a particular holiday, and can be saved and deleted as favorites in a separate column. Then they can click on the links of their favorites and learn more about the history and traditions behind these holy days.
 
 ![alt tag](./images/PJ2Wirefrm.png)
+
+The concept came from the idea of how the holiday of Hannukah always falls at a different time of year in relation to Christmas, fluctuating back and forth by weeks or even months within the Gregorian calendar between November and December.  While going through the data within the API I noticed that at certain point around the 90s -3990's that is- the holiday fell twice within the year ending in the earliest days of January and beginning again in before the new year in December.
+In 4001, Hannukah will fall twice within the same year.
+
+In the year 4000, there will be no Hannukah!
 ------
 
 Functionality
@@ -36,7 +41,6 @@ To account for this, as well the various different accepted spellings of many of
 As opposed to the title field, the link was parsed as key for the search, read using the lastIndexOf and substring methods, after which the strings were compared using a Levenshtein edit distance algorithm to match up different interpretations of spellings of the holidays.
 
 ![alt tag](./images/levenshtein.png)
-
 
 
 References
