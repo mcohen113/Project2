@@ -8,16 +8,31 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body class="signup">
-    <h1>WELCOME</h1>
-      <h2>...to the YEAR 4000</h2>
-    <header>
-      <nav class="signup">
-        <div class=sign>
-          <a href="/signup">Sign Up</a> <br>
-        <div class="log">
-          <a href="/login">Log In</a>
+    <header></header>
+    <div id="title">WELCOME...to the YEAR 4000</div>
+    <h1 id="about">This is a bunch of stuff about the app that decribes what it is and it does</h1>
+    <h2>Search for your favorite holidays!</h2>
+
+
+    <form action="/holidays/search" method="post">
+        <p>Enter a year</p>
+        <input type="text" name="year">
+        <p>Enter a holiday</p>
+        <input type="text" name="holiday" placeholder="search">
+        <button type="submit" >search</button>
+    </form>
+
+    <div id="search-results-container">
+      <h2>Search Results</h2>
+        <div class="search-results">
+          <p>9/27/17</p>
+          <p>Yom Kippur</p>
+          <p>כל ישראל</p>
+          <p>www.hebcal.com</p>
+          <a href="" target="_blank" title="">Learn more!!!</a>
+
         </div>
-      </nav>
-    </header>
+    </div>
+    <a href="/users/profile">Back to Profile</a>
   </body>
 </html>
