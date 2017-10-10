@@ -5,12 +5,9 @@ const express         = require('express');
 const morgan          = require('morgan');
 const path            = require('path');
 const bodyParser      = require('body-parser');
-const session         = require('express-session');
-const cookieParser    = require('cookie-parser');
+//const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
 const indexRouter     = require('./routes/index.js');
-const authRouter      = require('./routes/auth');
-const usersRouter     = require('./routes/users');
 const holidaysRouter     = require('./routes/holidays');
 
 const app             = express();
@@ -31,21 +28,19 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 // This is how we read the cookies sent over from the browser
-app.use(cookieParser());
+//app.use(cookieParser());
 
-app.use(session({
-  resave: false,
-  saveUninitialized: false,
-  secret: SECRET
-}));
+//app.use(session({
+  // resave: false,
+  // saveUninitialized: false,
+  // secret: SECRET
+//}));
 
 // Set static file root folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/auth', authRouter);
-app.use('/users', usersRouter);
-app.use('/holidays', holidaysRouter);
+app.use('/holidays/search', holidaysRouter);
 
 // Listen on port for connections
 // process.env.PORT is needed for when we deploy to Heroku

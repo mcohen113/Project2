@@ -33,54 +33,5 @@ const searchYears = (req, res, next) => {
     });
 };
 
+module.exports = { searchYears };
 
-function saveHoliday(req, res, next) {
-  // creating an empty object for the insertObj
-  const insertObj = {};
-
-  // copying all of req.body into insertObj
-  for(key in req.body) {
-    insertObj[key] = req.body[key];
-  }
-
-  // Adding userId to insertObj
-  insertObj.holiday.userId = req.session.userId;
-
-  MongoClient.connect(DB_CONNECTION, (err, db) => {
-    if (err) return next(err);
-    db.collection('holidays')
-      .insert(insertObj.holiday, (insertErr, result) => {
-        if (insertErr) return next(insertErr);
-        res.saved = result;
-        db.close();
-        next();
-      });
-      return false;
-  });
-  return false;
-}
-
-// Delete method doesn't change because we are deleting objects from the database
-// based on that object's unique _id - you do not need to specify which user as
-// the _id is sufficient enough
-function deleteHolidays(req, res, next) {
-  MongoClient.connect(DB_CONNECTION, (err, db) => {
-    if (err) return next(err);
-    db.collection('holidays')
-      .findAndRemove({ _id: ObjectID(req.params.id) }, (removeErr, result) => {
-        if (removeErr) return next(removeErr);
-        res.removed = result;
-        db.close();
-        next();
-      });
-      return false;
-  });
-  return false;
-}
-
-module.exports = { searchYears, saveHoliday, deleteHolidays };
-
-// module.exports = searchYears ;
-
-//str.lastIndexOf(searchValue[, fromIndex])
-//str.substring(indexStart[, indexEnd])
