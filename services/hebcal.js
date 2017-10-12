@@ -25,7 +25,7 @@ const searchHolidays = (req, res, next) => {
         if (distance > 3) return false;
         else return true;
       });
-      // console.log(res.holidays);
+      console.log(res.holidays);
       next();
     });
 };

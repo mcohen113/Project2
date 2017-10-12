@@ -39,8 +39,11 @@ app.use(methodOverride('_method'));
 // Set static file root folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set node modules folder
+app.use('/scripts', express.static(path.join(__dirname, 'node_modules')));
+
 app.use('/', indexRouter);
-app.use('/holidays/search', holidaysRouter);
+app.use('/holidays', holidaysRouter);
 
 // Listen on port for connections
 // process.env.PORT is needed for when we deploy to Heroku
