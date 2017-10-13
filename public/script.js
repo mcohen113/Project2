@@ -1,4 +1,10 @@
 $(function() {
+  var $input = $("#holidayInput");
+  $input.typeahead({
+    source: holidayJson,
+    autoSelect: true
+  });
+
   $('form').submit( function(e) {
     e.preventDefault();
     var source   = $("#search-result-template").html();
