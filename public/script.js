@@ -11,6 +11,7 @@ $(function() {
     let holiday = $('#holidayInput').val();
 
     $.get('http://www.hebcal.com/hebcal/?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&month=x&year=' + year, function(data) {
+      var markup = "";
       let userHoliday = holiday.toUpperCase();
       let holidays = data.items.filter(item => {
         //grabbing last word in link for holiday using lastIndexOf & substring method, remove dashes from link
@@ -26,10 +27,12 @@ $(function() {
 
         else {
           var html = template(item);
-          $('#search-results').append(html);
+          markup += html;
           return true;
         }
       });
+
+      $('#search-results').html(markup);
     });
   });
 });
