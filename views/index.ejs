@@ -25,22 +25,24 @@
 
             <div id="search-results-container">
               <h2>Search Results</h2>
-                <div class="search-results">
-                  <p>9/27/17</p>
-                  <p>Yom Kippur</p>
-                  <p>כל ישראל</p>
-                  <p>www.hebcal.com</p>
-                  <a href="" target="_blank" title="">Learn more!!!</a>
+              <div id="search-results"></div>
 
-                </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="/scripts/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="https://gist.github.com/IgorInger/1562394.js"></script>
+    <script src="/scripts/handlebars/dist/handlebars.min.js" type="text/javascript"></script>
     <script src="/lev.js"></script>
     <script src="/script.js"></script>
+    <script id="search-result-template" type="text/x-handlebars-template">
+      <div class="search-result">
+        <p>{{date}}</p>
+        <p>{{title}}</p>
+        <p>{{hebrew}}</p>
+        <a href="{{link}}" target="_blank" title="">Learn more!!!</a>
+      </div>
+    </script>
   </body>
 </html>
